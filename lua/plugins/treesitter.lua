@@ -6,25 +6,29 @@ return {
         "windwp/nvim-ts-autotag",
     },
     config = function()
-        local treesitter = require("nvim-treesitter.configs")
+        local config = require("nvim-treesitter.configs")
 
-        treesitter.setup({
+        config.setup({
+						auto_install = true,
+
             -- enable syntax highlighting
             highlight = { enable = true, additional_vim_regex_highlighting = false },
+
             -- enable indentation
             indent = { enable = true },
+
             -- enable autotagging (w/ nvim-ts-autotag plugin)
             autotag = { enable = true },
-            auto_install = true,
+            
             ensure_installed = {
                 "json",
                 "tsx",
                 "yaml",
+								"xml",
+								"toml",
                 "html",
                 "css",
-                "markdown",
-                "markdown_inline",
-                "bash",
+								"bash",
                 "lua",
                 "vim",
                 "dockerfile",
@@ -38,7 +42,13 @@ return {
                 "rust",
                 "go",
                 "python",
+								"pip requirements",
+								"regex",
                 "dart",
+								"zig",
+								"pem",
+								"llvm",
+								"asm",
             },
             incremental_selection = {
                 enable = true,

@@ -1,3 +1,15 @@
+return {
+	"navarasu/onedark.nvim",
+	lazy = false,
+	priority = 1000,
+	config = function()
+		require("onedark").setup({
+			style = "cool", -- "dark", "darker", "cool", "deep", "warm", "warmer"
+		})
+		vim.cmd("colorscheme onedark")
+	end,
+}
+
 -- return {
 --     {
 --       "catppuccin/nvim",
@@ -5,23 +17,10 @@
 --       name = "catppuccin",
 --       priority = 1000,
 --       config = function()
---         vim.cmd.colorscheme "catppuccin-frappe" -- latte, frappe, macchiato, mocha
+--         vim.cmd("colorscheme catppuccin-frappe") -- latte, frappe, macchiato, mocha
 --       end
 --     }
 --   }
-
-
-return {
-    "navarasu/onedark.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-    require("onedark").setup {
-        style = "cool", -- "dark", "darker", "cool", "deep", "warm", "warmer"
-    }
-    vim.cmd("colorscheme onedark")
-    end,
-}
 
 -- return {
 --     "folke/tokyonight.nvim",
