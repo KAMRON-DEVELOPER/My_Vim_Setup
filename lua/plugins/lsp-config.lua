@@ -1,20 +1,8 @@
 return {
+	{
 	"williamboman/mason.nvim",
-	dependencies = {
-		"williamboman/mason-lspconfig.nvim",
-		"WhoIsSethDaniel/mason-tool-installer.nvim",
-	},
 	config = function()
-		-- import mason
-		local mason = require("mason")
-
-		-- import mason-lspconfig
-		local mason_lspconfig = require("mason-lspconfig")
-
-		local mason_tool_installer = require("mason-tool-installer")
-
-		-- enable mason and configure icons
-		mason.setup({
+		require("mason").setup({
 			ui = {
 				icons = {
 					package_installed = "✓",
@@ -23,8 +11,12 @@ return {
 				},
 			},
 		})
-
-		mason_lspconfig.setup({
+	end
+	}
+	{
+		"williamboman/mason-lspconfig.nvim",
+		config = function()
+			require("mason-lspconfig").setup({
 			-- list of servers for mason to install
 			ensure_installed = {
 				-- "html", -- htlm
@@ -32,7 +24,7 @@ return {
 				-- "svelte", -- stelve
 				-- "emmet_ls", -- emmet
 				-- "asm_lsp", -- assembly
-				-- "lua_ls",                          -- lua
+				"lua_ls", -- lua
 				-- "cmake", -- cmake
 				"clangd", -- c and c++
 				"rust_analyzer", -- rust_analyzer, other options: rust_analyzer, ast_grep, harper_ls
@@ -51,15 +43,6 @@ return {
 				-- "zls", -- zig
 			},
 		})
-
-		mason_tool_installer.setup({
-			ensure_installed = {
-				"prettier", -- prettier formatter
-				"stylua", -- lua formatter
-				"black", -- python formatter
-				-- "pylint", -- python linter
-				-- "eslint_d", -- js linter
-			},
-		})
-	end,
+		end
+	}
 }
