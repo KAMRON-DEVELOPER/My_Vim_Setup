@@ -1,16 +1,25 @@
 return {
+	{
+		"nvim-telescope/telescope-ui-select.nvim",
+	},
+	{
 	"nvim-telescope/telescope.nvim",
 	branch = "0.1.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		"nvim-tree/nvim-web-devicons",
 	},
+
 	config = function()
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
 
 		telescope.setup({
+			extentions = {
+				["ui-select"] = {
+            require("telescope.themes").get_dropdown({}),
+        },
+			},
 			defaults = {
 				path_display = { "smart" },
 				mappings = {
@@ -22,7 +31,7 @@ return {
 			},
 		})
 
-		telescope.load_extension("fzf")
+		require("telescope").load_extension("ui-select")
 
 		-- set keymaps
 		local keymap = vim.keymap -- for conciseness
@@ -32,5 +41,6 @@ return {
 		keymap.set("n", "<leader>fg", "<CMD>Telescope live_grep<CR>", { desc = "Find string in cwd" })
 		keymap.set("n", "<leader>fc", "<CMD>Telescope grep_string<CR>", { desc = "Find string under cursor in cwd" })
 	end,
+	}
 }
 
