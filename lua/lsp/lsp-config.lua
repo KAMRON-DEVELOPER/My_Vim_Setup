@@ -32,6 +32,7 @@ return {
 					-- "prettier", -- prettier formatter
 					-- "flake8", -- python linter
 					-- "eslint_d", -- js linter
+					-- "pylint",
 				},
 			})
 		end,
@@ -39,9 +40,6 @@ return {
 	{
 		"williamboman/mason-lspconfig.nvim",
 		lazy = false,
-		-- opts = {
-		-- 	auto_install = true,
-		-- },
 
 		config = function()
 			local mason_lspconfig = require("mason-lspconfig")
@@ -51,6 +49,11 @@ return {
 					"lua_ls", -- lua-language-server in mason
 					-- "rust_analyzer",
 					-- "clangd",
+					-- "tsserver",
+					-- "eslint",
+					-- "pyright",
+					-- "html",
+					-- "jsonls",
 
 				},
 			})
@@ -58,6 +61,9 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
+		dependencies = {
+			"hrsh7th/cmp-nvim-lsp",
+		},
 		lazy = false,
 
 		config = function()
@@ -71,6 +77,18 @@ return {
 			-- 	capabilities = capabilities,
 			-- })
 			-- lspconfig.clangd.setup({
+			-- capabilities = capabilities,
+			-- })
+			-- lspconfig.eslint.setup({
+			-- capabilities = capabilities,
+			-- })
+			-- lspconfig.pyright.setup({
+			-- capabilities = capabilities,
+			-- })
+			-- lspconfig.jsonls.setup({
+			-- capabilities = capabilities,
+			-- })
+			-- lspconfig.html.setup({
 			-- capabilities = capabilities,
 			-- })
 
