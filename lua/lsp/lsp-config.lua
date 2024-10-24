@@ -30,7 +30,7 @@ return {
 					-- "isort", -- python formatter
 					-- "rustfmt", -- rust formatter
 					-- "prettier", -- prettier formatter
-					-- "flake8", -- python linter
+					"flake8", -- python linter
 					-- "eslint_d", -- js linter
 					-- "pylint",
 				},
