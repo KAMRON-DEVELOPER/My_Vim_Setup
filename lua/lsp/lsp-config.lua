@@ -54,7 +54,6 @@ return {
 					-- "pyright",
 					-- "html",
 					-- "jsonls",
-
 				},
 			})
 		end,

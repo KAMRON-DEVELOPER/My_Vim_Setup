@@ -17,6 +17,14 @@ return {
 			python = { "flake8" },
 		}
 
+		-- customize flake8 for ignore cases
+		lint.linters.flake8 = {
+			name = "flake8",
+			args = {
+				"--ignore=F401",
+			},
+		}
+
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 
 		vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
