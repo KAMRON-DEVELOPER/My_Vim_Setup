@@ -35,7 +35,7 @@ return {
 					-- "dockerfile-language-server", -- it will be installed via mason-slpconfig (dockerls)
 					-- "docker-compose-language-service", -- it will be installed via mason-lspconfig (docker_compose_language_service)
 					-- "nginx-language-server", -- it will be installed via mason-lspconfig (nginx_language_serveri)
-					-- "jinja-lsp", -- it will be installed via mason-lspconfig (jinja_lsp)
+					-- "jinja-lsp", -- it will be installed via mason-lspconfig (jinja_lsp), django all in one stuff
 					-- "eslint-lsp", -- it will be installed via mason-lspconfig (eslint)
 					-- "json-lsp", -- it will be installed via mason-slpconfig (jsonls)
 					-- "html-lsp", -- it will be installed via mason-lspconfig (html)
@@ -58,12 +58,12 @@ return {
 					"rust_analyzer", -- it can be installed via mason (rust-analyzer)
 					"gopls", -- it can be installed via mason, official go language server (pronounced "Go please")
 					"clangd",
-					"asm_lsp", -- it can be installed via mason (asm-lsp), assambly language
+					-- "asm_lsp", -- it can be installed via mason (asm-lsp), assambly language
 					"eslint", -- it can be installed via mason (eslint-lsp)
 					"dockerls", -- it can be installed via mason (dockerfile-language-server)
 					"docker_compose_language_service", -- it can be installed via mason (docker-compose-language-service)
 					"nginx_language_server", -- it can be installed via mason (nginx-language-server)
-					"jinja_lsp", -- it can be installed via mason (jinja-lsp)
+					"jinja_lsp", -- it can be installed via mason (jinja-lsp), django all in one stuff
 					"jsonls", -- it can be installed via mason (json-lsp)
 					"html", -- it can be installed via mason (html-lsp)
 					"taplo", -- it is for toml files
