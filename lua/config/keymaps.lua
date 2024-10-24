@@ -29,3 +29,9 @@ keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" })
 
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
+
+-- code actions and something like stuffs
+keymap.set("n", "K", vim.lsp.buf.hover, { desc = "hovering" })
+keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "go to definition" })
+keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "go to references" })
+keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "show code actions" })
