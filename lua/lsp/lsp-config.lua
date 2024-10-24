@@ -30,9 +30,9 @@ return {
 					-- "isort", -- python formatter
 					-- "rustfmt", -- rust formatter
 					-- "prettier", -- prettier formatter
-					"flake8", -- python linter
+					-- "flake8", -- python linter
 					-- "eslint_d", -- js linter
-					-- "pylint",
+					"ruff",
 				},
 			})
 		end,
@@ -51,7 +51,7 @@ return {
 					-- "clangd",
 					-- "tsserver",
 					-- "eslint",
-					-- "pyright",
+					-- "ruff", -- ruff has in mason itself
 					-- "html",
 					-- "jsonls",
 				},
@@ -81,9 +81,9 @@ return {
 			-- lspconfig.eslint.setup({
 			-- capabilities = capabilities,
 			-- })
-			-- lspconfig.pyright.setup({
-			-- capabilities = capabilities,
-			-- })
+			lspconfig.ruff.setup({
+				capabilities = capabilities,
+			})
 			-- lspconfig.jsonls.setup({
 			-- capabilities = capabilities,
 			-- })

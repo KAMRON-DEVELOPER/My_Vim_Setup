@@ -14,15 +14,7 @@ return {
 			-- typescript = { "eslint_d" },
 			-- javascriptreact = { "eslint_d" },
 			-- typescriptreact = { "eslint_d" },
-			python = { "flake8" },
-		}
-
-		-- customize flake8 for ignore cases
-		lint.linters.flake8 = {
-			name = "flake8",
-			args = {
-				"--ignore=F401",
-			},
+			-- python = { "flake8" },
 		}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
