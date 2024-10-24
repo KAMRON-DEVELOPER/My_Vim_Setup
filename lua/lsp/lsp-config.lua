@@ -25,8 +25,8 @@ return {
 					-- "lua-language-server", -- lua_ls in mason-lspconfig
 					-- "rust_analyzer",
 					-- "clangd",
-					"stylua",         -- lua formatter
-					"black",          -- python formatter
+					"stylua", -- lua formatter
+					"black", -- python formatter
 					-- "isort", -- python formatter
 					-- "rustfmt", -- rust formatter
 					-- "prettier", -- prettier formatter
