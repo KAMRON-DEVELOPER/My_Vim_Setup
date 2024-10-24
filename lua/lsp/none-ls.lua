@@ -13,9 +13,10 @@ return {
 				fmt.stylua,
 				fmt.black,
 				-- fmt.rustfmt,
-				-- fmt.prettier.with({
-				-- 	filetypes = { "html", "json", "yaml", "markdown", "javascript", "typescript" },
-				-- }),
+				fmt.prettier.with({
+					filetypes = { "html", "json", "yaml", "markdown", "javascript", "typescript" },
+				}),
+				fmt.clangd,
 
 				-- diagnostics
 				-- dgn.eslint_d,
@@ -25,6 +26,6 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = "format current buffer or range (Visual Mode)" })
+		vim.keymap.set("n", "<C-f>", vim.lsp.buf.format, { desc = "format current buffer or range (Visual Mode)" })
 	end,
 }
