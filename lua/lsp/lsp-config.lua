@@ -30,13 +30,16 @@ return {
 					-- "ruff", -- it will be installed via mason-lspconfig
 					-- "rust-analyzer", -- it will be installed via mason-lspconfig (rust_analyzer)
 					-- "gopls", -- it will be installed via mason-lspconfig
+					"goimports", -- formatter (go), formats like gofmt and fix imports
 					-- "clangd", -- it will be installed via mason-slpconfig
+					"clang-format", -- formatter (c, c++)
 					-- "asm-lsp", -- it will be installed via mason-lspconfig (asm_lsp)
 					-- "dockerfile-language-server", -- it will be installed via mason-slpconfig (dockerls)
 					-- "docker-compose-language-service", -- it will be installed via mason-lspconfig (docker_compose_language_service)
 					-- "nginx-language-server", -- it will be installed via mason-lspconfig (nginx_language_serveri)
 					-- "jinja-lsp", -- it will be installed via mason-lspconfig (jinja_lsp), django all in one stuff
-					-- "eslint-lsp", -- it will be installed via mason-lspconfig (eslint)
+					"eslint_d",
+
 					-- "json-lsp", -- it will be installed via mason-slpconfig (jsonls)
 					-- "html-lsp", -- it will be installed via mason-lspconfig (html)
 					-- "taplo", -- it will be installed via mason-lspconfig
@@ -59,7 +62,7 @@ return {
 					"gopls", -- it can be installed via mason, official go language server (pronounced "Go please")
 					"clangd",
 					-- "asm_lsp", -- it can be installed via mason (asm-lsp), assambly language
-					"eslint", -- it can be installed via mason (eslint-lsp)
+					"ts_ls", -- it can be installed via mason (typescript-language-server)
 					"dockerls", -- it can be installed via mason (dockerfile-language-server)
 					"docker_compose_language_service", -- it can be installed via mason (docker-compose-language-service)
 					-- "nginx_language_server", -- it can be installed via mason (nginx-language-server)
@@ -88,7 +91,6 @@ return {
 			lspconfig.ruff.setup({
 				capabilities = capabilities,
 			})
-
 			lspconfig.rust_analyzer.setup({
 				capabilities = capabilities,
 			})
@@ -98,23 +100,13 @@ return {
 			lspconfig.clangd.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.asm_lsp.setup({
-				capabilities = capabilities,
-			})
-
-			lspconfig.eslint.setup({
+			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.dockerls.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.docker_compose_language_service.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.nginx_language_server.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.nginx_language_server.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.jinja_lsp.setup({

@@ -16,13 +16,14 @@ return {
 				fmt.prettier.with({
 					filetypes = { "html", "json", "yaml", "markdown", "javascript", "typescript" },
 				}),
-				fmt.clangd,
+				fmt.clang_format,
+				fmt.goimports,
 
 				-- diagnostics
-				-- dgn.eslint_d,
+				-- dgn.eslint,
 
 				-- Code Actions
-				-- cda.eslint_d,
+				-- cda.eslint,
 			},
 		})
 
