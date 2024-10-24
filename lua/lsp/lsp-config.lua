@@ -62,7 +62,7 @@ return {
 					"eslint", -- it can be installed via mason (eslint-lsp)
 					"dockerls", -- it can be installed via mason (dockerfile-language-server)
 					"docker_compose_language_service", -- it can be installed via mason (docker-compose-language-service)
-					"nginx_language_server", -- it can be installed via mason (nginx-language-server)
+					-- "nginx_language_server", -- it can be installed via mason (nginx-language-server)
 					"jinja_lsp", -- it can be installed via mason (jinja-lsp), django all in one stuff
 					"jsonls", -- it can be installed via mason (json-lsp)
 					"html", -- it can be installed via mason (html-lsp)
