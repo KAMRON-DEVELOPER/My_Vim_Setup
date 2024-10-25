@@ -1,5 +1,6 @@
 import datetime
-import sd
+
+# import sd
 
 
 class Person:
@@ -15,5 +16,3 @@ print(f"date now: {datetime.now()}")
 
 print(f"my name: {men.name}")
 print(f"my name: {men.job}")
-
-

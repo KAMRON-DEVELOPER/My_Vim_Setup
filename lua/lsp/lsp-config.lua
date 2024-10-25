@@ -27,8 +27,9 @@ return {
 					"prettier", -- formatter (javascript, typescript, json, html, JSX, markdown, yaml)
 					-- "rustfmt", -- formatter (rust)
 					-- "lua-language-server", -- it will be installed via mason-lspconfig (lua_ls)
-					-- "ruff", -- it will be installed via mason-lspconfig
+					-- "pyright", -- it will be installed via mason-lspconfig
 					-- "rust-analyzer", -- it will be installed via mason-lspconfig (rust_analyzer)
+					-- "codelldb", -- rust debugger
 					-- "gopls", -- it will be installed via mason-lspconfig
 					"goimports", -- formatter (go), formats like gofmt and fix imports, better than gofmt
 					-- "clangd", -- it will be installed via mason-slpconfig
@@ -57,22 +58,22 @@ return {
 
 			mason_lspconfig.setup({
 				ensure_installed = {
-					"lua_ls", -- it can be installed via mason (lua-language-server)
-					"ruff",
-					-- "rust_analyzer", -- it can be installed via mason (rust-analyzer)
-					"gopls", -- it can be installed via mason, official go language server (pronounced "Go please")
-					"clangd", -- it can be installed via mason
-					"cmake", -- it can be installed via mason (cmake-language-server)
+					"lua_ls",                     -- it can be installed via mason (lua-language-server)
+					"pyright",                    -- it can be installed via mason
+					"rust_analyzer",              -- it can be installed via mason (rust-analyzer)
+					"gopls",                      -- it can be installed via mason, official go language server (pronounced "Go please")
+					"clangd",                     -- it can be installed via mason
+					"cmake",                      -- it can be installed via mason (cmake-language-server)
 					-- "asm_lsp", -- it can be installed via mason (asm-lsp), assambly language
-					"ts_ls", -- it can be installed via mason (typescript-language-server)
+					"ts_ls",                      -- it can be installed via mason (typescript-language-server)
 					-- "quick_lint_js", -- it can be installed via mason (quick-lint-js)
-					"dockerls", -- it can be installed via mason (dockerfile-language-server)
+					"dockerls",                   -- it can be installed via mason (dockerfile-language-server)
 					"docker_compose_language_service", -- it can be installed via mason (docker-compose-language-service)
 					-- "nginx_language_server", -- it can be installed via mason (nginx-language-server)
-					"jinja_lsp", -- it can be installed via mason (jinja-lsp), django all in one stuff
-					"jsonls", -- it can be installed via mason (json-lsp)
-					"html", -- it can be installed via mason (html-lsp)
-					"taplo", -- it is for toml files
+					"jinja_lsp",                  -- it can be installed via mason (jinja-lsp), django all in one stuff
+					"jsonls",                     -- it can be installed via mason (json-lsp)
+					"html",                       -- it can be installed via mason (html-lsp)
+					"taplo",                      -- it is for toml files
 				},
 			})
 		end,
@@ -91,12 +92,16 @@ return {
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.ruff.setup({
+			lspconfig.pyright.setup({
 				capabilities = capabilities,
 			})
-			-- lspconfig.rust_analyzer.setup({
-			-- 	capabilities = capabilities,
-			-- })
+			lspconfig.rust_analyzer.setup({
+				settings = {
+					["rust-analyzer"] = {},
+				},
+				capabilities = capabilities,
+			})
+
 			lspconfig.gopls.setup({
 				capabilities = capabilities,
 			})
