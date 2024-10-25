@@ -21,7 +21,7 @@ impl Person {
 
 fn main() {
     let person1 = Person::new("Ali", 25);
-    let person2 = Person::new("Oya", 30)
+    let person2 = Person::new("Oya", 30
 
     println!("{}", person1.greet());
     println!("{}", person2.greet(;

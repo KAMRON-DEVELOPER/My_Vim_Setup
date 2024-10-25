@@ -18,9 +18,12 @@ return {
 				}),
 				fmt.clang_format,
 				fmt.goimports,
+				fmt.djlint.with({
+					filetypes = { "django", "jinja.html", "htmldjango" },
+				}),
 
 				-- diagnostics
-				-- dgn.eslint,
+				-- dgn.rust_analyzer,
 
 				-- Code Actions
 				-- cda.eslint,
