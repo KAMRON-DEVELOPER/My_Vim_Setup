@@ -22,29 +22,34 @@ return {
 
 			mason_tool_installer.setup({
 				ensure_installed = {
-					"stylua", -- formatter (lua)
-					"black", -- formatter (python)
-					"prettier", -- formatter (javascript, typescript, json, html, JSX, markdown, yaml)
-					-- "rustfmt", -- formatter (rust)
 					-- "lua-language-server", -- it will be installed via mason-lspconfig (lua_ls)
+					"stylua", -- formatter (lua), for none-ls
+					"prettier", -- formatter (javascript, typescript, json, html, JSX, markdown, yaml), for none-ls
 					-- "pyright", -- it will be installed via mason-lspconfig
+					-- "flake8", -- python linter
+					-- "mypy"
+					"black", -- formatter (python), for none-ls
+					-- "debugpy", -- An implementation of the Debug Adapter Protocol for Python. from Microsoft
+					"clippy", -- rust linter for nvim-lint
 					-- "rust-analyzer", -- it will be installed via mason-lspconfig (rust_analyzer)
+					-- "rustfmt", -- formatter (rust)
 					-- "codelldb", -- rust debugger
-					-- "gopls", -- it will be installed via mason-lspconfig
-					"goimports", -- formatter (go), formats like gofmt and fix imports, better than gofmt
+					-- "gopls", -- it will be installed via mason-lspconfig, official go language server (pronounced "Go please")
+					-- "goimports", -- formatter (go), formats like gofmt and fix imports, better than gofmt, for none-ls
 					-- "clangd", -- it will be installed via mason-slpconfig
-					-- "cmake-language-server", it will be installed via mason-slpconfig (cmake)
+					"clang-format", -- formatter (c, c++), for none-ls
+					-- "cpptools", -- Official repository for the Microsoft C/C++ extension for VS Code.
+					"cmakelint", -- cmake linter for nvim-lint
+					"gersemi", -- cmake formatter for none-ls
 					-- "typescript-language-server", -- it will installed via mason-lspconfig (ts_ls)
 					-- "quick-lint-js", -- it will be installed via mason-lspconfig (quick_lint_js), 130x faster than ESlint
-					"clang-format", -- formatter (c, c++)
 					-- "asm-lsp", -- it will be installed via mason-lspconfig (asm_lsp)
 					-- "dockerfile-language-server", -- it will be installed via mason-slpconfig (dockerls)
 					-- "docker-compose-language-service", -- it will be installed via mason-lspconfig (docker_compose_language_service)
-					-- "nginx-language-server", -- it will be installed via mason-lspconfig (nginx_language_serveri)
-					-- "jinja-lsp", -- it will be installed via mason-lspconfig (jinja_lsp), django all in one stuff
 					-- "json-lsp", -- it will be installed via mason-slpconfig (jsonls)
-					-- "html-lsp", -- it will be installed via mason-lspconfig (html)
-					-- "taplo", -- it will be installed via mason-lspconfig
+					"markuplint", -- html linter for none-ls
+					"taplo",   -- it will be installed via mason-lspconfig, linter for toml
+					"markdownlint", -- markdown linter for none-ls
 				},
 			})
 		end,
@@ -64,16 +69,13 @@ return {
 					"gopls",                      -- it can be installed via mason, official go language server (pronounced "Go please")
 					"clangd",                     -- it can be installed via mason
 					"cmake",                      -- it can be installed via mason (cmake-language-server)
-					-- "asm_lsp", -- it can be installed via mason (asm-lsp), assambly language
+					"asm_lsp",                    -- it can be installed via mason (asm-lsp)
 					"ts_ls",                      -- it can be installed via mason (typescript-language-server)
-					-- "quick_lint_js", -- it can be installed via mason (quick-lint-js)
+					-- "quick_lint_js",	-- it can be installed via mason (quick-lint-js)
 					"dockerls",                   -- it can be installed via mason (dockerfile-language-server)
 					"docker_compose_language_service", -- it can be installed via mason (docker-compose-language-service)
-					-- "nginx_language_server", -- it can be installed via mason (nginx-language-server)
-					"jinja_lsp",                  -- it can be installed via mason (jinja-lsp), django all in one stuff
 					"jsonls",                     -- it can be installed via mason (json-lsp)
-					"html",                       -- it can be installed via mason (html-lsp)
-					"taplo",                      -- it is for toml files
+					"taplo",                      -- it can be installed via mason, lsp for toml
 				},
 			})
 		end,
@@ -96,21 +98,12 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.rust_analyzer.setup({
-				settings = {
-					["rust-analyzer"] = {},
-				},
 				capabilities = capabilities,
 			})
-
 			lspconfig.gopls.setup({
 				capabilities = capabilities,
 			})
-			-- TODO extra config needed
 			lspconfig.clangd.setup({
-				cmd = {
-					"clangd",
-					"--background-index",
-				},
 				capabilities = capabilities,
 			})
 			lspconfig.cmake.setup({
@@ -125,14 +118,10 @@ return {
 			lspconfig.docker_compose_language_service.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.jinja_lsp.setup({
-				capabilities = capabilities,
-			})
-
 			lspconfig.jsonls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.html.setup({
+			lspconfig.asm_lsp.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.taplo.setup({
@@ -142,7 +131,7 @@ return {
 			-- set keymaps
 			local keymap = vim.keymap
 
-			keymap.set("n", "K", vim.lsp.buf.hover, { desc = "hovering" })
+			keymap.set("n", "<leader>ch", vim.lsp.buf.hover, { desc = "code hovering" })
 			keymap.set("n", "<leader>cd", vim.lsp.buf.definition, { desc = "code definition" })
 			keymap.set("n", "<leader>cr", vim.lsp.buf.references, { desc = "code references" })
 			keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "code action" })

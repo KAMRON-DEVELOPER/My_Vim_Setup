@@ -9,6 +9,7 @@ return {
 		local lint = require("lint")
 
 		lint.linters_by_ft = {
+			cmake = { "cmakelint" },
 			-- lua = { "selene" },
 			-- javascript = { "eslint_d" },
 			-- typescript = { "eslint_d" },
