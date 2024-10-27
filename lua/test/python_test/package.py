@@ -1,6 +1,6 @@
 import datetime
 
-# import sd
+import sd
 
 
 class Person:
@@ -12,7 +12,8 @@ class Person:
 
 men = Person("Kamronbek", 21)
 
-print(f"date now: {datetime.now()}")
+
+print(f"date now: {datetime.datetime.now()}")
 
 print(f"my name: {men.name}")
-print(f"my name: {men.job}")
+print(f"my name: {men.age}")
