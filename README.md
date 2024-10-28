@@ -1,14 +1,20 @@
 # 🚀 MY ULTIMATE NEOVIM SETUP 🚀
 
+
 > [!WARNING]
-> My config is so easy to configure and it has almost all languages!
-> Almost all languages has linter and formatter...
+> 😎 My config is so easy to configure and it has almost all languages!
+
+> 😱 Almost all languages has linter and formatter...
 
 > [!NOTE]
-> I have commented some options to choice!
+> 💪 I have commented some options to choice!
 
 
-## NAVIGATION
+---
+---
+
+
+### ⭐ NAVIGATION ⭐
 | Mode | Key        | Action                          |
 | ---- | ---------- | ------------------------------- |
 | (n)  | `h`        | Move cursor left                |
@@ -29,7 +35,7 @@
 | (n)  | `Ctrl + b` | Move one page up                |
 | (n)  | `Ctrl + f` | Move one page down              |
 
-## EDITING
+## ⭐ EDITING ⭐
 | Mode | Key        | Action                            |
 | ---- | ---------- | --------------------------------- |
 | (n)  | `x`        | Delete character after cursor     |
@@ -48,7 +54,7 @@
 | (n)  | `cw`       | Change word (partial)             |
 | (n)  | `caw`      | Change entire word                |
 
-## VISUAL MODE
+## ⭐ VISUAL MODE ⭐
 | Mode | Key | Action              |
 | ---- | --- | ------------------- |
 | (v)  | `v` | Start visual mode   |
@@ -59,9 +65,10 @@
 
 
 ---
+---
 
 
-## PLUGINS CONFIGURATION
+## 📦 PLUGINS CONFIGURATION 📦
 
 ### ⚙️ nvim-treesitter
 | Mode | Key                    | Action                |
