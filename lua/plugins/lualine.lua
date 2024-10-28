@@ -5,8 +5,11 @@
 
 return {
 	"nvim-lualine/lualine.nvim",
+
 	config = function()
-		require("lualine").setup({
+		local lualine = require("lualine")
+
+		lualine.setup({
 			options = {
 				-- theme = "auto",
 				-- theme = "iceberg_dark",

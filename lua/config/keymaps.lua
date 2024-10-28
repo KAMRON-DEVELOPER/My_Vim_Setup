@@ -10,10 +10,10 @@ keymap.set("n", "<leader>q", "<CMD>quit<CR>", { desc = "close buffer" })
 -- source current file
 vim.keymap.set("n", "<leader><leader>", function()
 	vim.cmd("so")
-end)
+end, { desc = "Source file" })
 
 -- select all
-vim.keymap.set("n", "==", "gg<S-v>G")
+vim.keymap.set("n", "==", "gg<S-v>G", { desc = "Select all" })
 
 -- copy file name and paths
 vim.keymap.set("n", "<leader>cf", '<cmd>let @+ = expand("%")<CR>', { desc = "Copy File Name" })

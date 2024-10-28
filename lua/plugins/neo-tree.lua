@@ -41,7 +41,6 @@ return {
 			},
 		})
 
-		-- depricated
 		vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
 		vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
 		vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
@@ -59,7 +58,6 @@ return {
 				statusline = false,
 			},
 
-			-- default components configs settings
 			default_component_configs = {
 
 				icon = {
@@ -77,8 +75,6 @@ return {
 							end
 						end
 					end,
-					-- The next two settings are only a fallback, if you use nvim-web-devicons and configure default icons there
-					-- then these will never be used.
 					default = "*",
 					highlight = "NeoTreeFileIcon",
 				},

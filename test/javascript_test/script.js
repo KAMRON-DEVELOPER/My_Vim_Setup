@@ -34,4 +34,11 @@ function main() {
   displayUser(user1);
 }
 
+
+/*
+block
+comment
+*/
+
+
 main();
