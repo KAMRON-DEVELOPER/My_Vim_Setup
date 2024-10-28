@@ -24,3 +24,5 @@ return {
 		keymap.set("n", "<leader>gp", ":Git push<CR>", { noremap = true, silent = true, desc = "Git push" })
 	end,
 }
+
+--
