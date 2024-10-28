@@ -109,6 +109,7 @@ return {
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
+			local conform = require("conform")
 
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
@@ -116,16 +117,16 @@ return {
 			lspconfig.ruff.setup({
 				capabilities = capabilities,
 			})
-			-- lspconfig.rust_analyzer.setup({
-			-- 	settings = {
-			-- 		["rust-analyzer"] = {
-			-- 			diagnostics = {
-			-- 				enable = false,
-			-- 			},
-			-- 		},
-			-- 	},
-			-- 	capabilities = capabilities,
-			-- })
+			lspconfig.rust_analyzer.setup({
+				settings = {
+					["rust-analyzer"] = {
+						diagnostics = {
+							enable = false,
+						},
+					},
+				},
+				capabilities = capabilities,
+			})
 			lspconfig.gopls.setup({
 				capabilities = capabilities,
 			})
@@ -161,13 +162,27 @@ return {
 				vim.lsp.buf.rename()
 			end
 
-			keymap.set("n", "K", vim.lsp.buf.hover, { desc = "code hovering" })
-			keymap.set("n", "cd", vim.lsp.buf.definition, { desc = "code definition" })
-			keymap.set("n", "cr", vim.lsp.buf.references, { desc = "code references" })
-			keymap.set("n", "ca", vim.lsp.buf.code_action, { desc = "code action" })
-			-- keymap.set("n", "cf", vim.lsp.buf.format, { desc = "Format current buffer" })
-			-- keymap.set("n", "[d", vim.diagnostic.goto_next(), { desc = "Next Diagnostic" })
-			-- keymap.set("n", "]d", vim.diagnostic.goto_prev(), { desc = "Previous Diagnostic" })
+			local conform_format = function()
+				conform.format({
+					lsp_fallback = true,
+					async = false,
+					timeout_ms = 1000,
+				})
+			end
+
+			keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP code hovering" })
+			keymap.set("n", "<leader>cd", vim.lsp.buf.definition, { desc = "LSP code definition" })
+			keymap.set("n", "<leader>cr", vim.lsp.buf.references, { desc = "LSP code references" })
+			keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP code action" })
+			vim.keymap.set(
+				{ "n", "v" },
+				"<C-f>",
+				conform_format,
+				{ desc = "Conform format file" }
+			)
+			keymap.set("n", "cf", vim.lsp.buf.format, { desc = "LSP format current buffer" })
+			keymap.set("n", "<leader>[d", vim.diagnostic.goto_next, { desc = "Next Diagnostic" })
+			keymap.set("n", "<leader>]d", vim.diagnostic.goto_prev, { desc = "Previous Diagnostic" })
 			keymap.set("n", "<leader>cR", rename_function, { desc = "LSP rename" })
 		end,
 	},

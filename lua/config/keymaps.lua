@@ -9,8 +9,8 @@ keymap.set("n", "<leader>q", "<CMD>quit<CR>", { desc = "close buffer" })
 
 -- source current file
 vim.keymap.set("n", "<leader><leader>", function()
-  vim.cmd("so")
-end, { desc = "Source current file" })
+	vim.cmd("so")
+end)
 
 -- select all
 vim.keymap.set("n", "==", "gg<S-v>G")
@@ -21,10 +21,10 @@ vim.keymap.set("n", "<leader>cp", '<cmd>let @+ = expand("%:p")<CR>', { desc = "C
 
 -- open terminal
 vim.keymap.set("n", "<S-t>", function()
-  vim.cmd("split")
-  vim.cmd("resize 10")
-  vim.cmd("terminal")
-  vim.cmd("startinsert")
+	vim.cmd("split")
+	vim.cmd("resize 10")
+	vim.cmd("terminal")
+	vim.cmd("startinsert")
 end, { noremap = true, silent = true })
 
 -- window management
@@ -58,3 +58,7 @@ keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" })
 
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
+
+-- half page up or down
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")

@@ -38,15 +38,5 @@ return {
 			-- timeout_ms = 500,
 			-- },
 		})
-
-		local conform_format = function()
-			conform.format({
-				lsp_fallback = true,
-				async = false,
-				timeout_ms = 1000,
-			})
-		end
-
-		vim.keymap.set({ "n", "v" }, "<leader>mp", conform_format, { desc = "Format file or range (in visual mode)" })
 	end,
 }
