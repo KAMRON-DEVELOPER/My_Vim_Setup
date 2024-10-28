@@ -3,7 +3,13 @@ There is my vim configurations
 
 # Favorite Chocolate Chip Cookies
 
+Hello Markdown
+
 ```python
 def mainer(x: int) -> int:
     return x
 ```
+
+> [!NOTE]
+> git clone firstly
+> nvim .
