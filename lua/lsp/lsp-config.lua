@@ -32,7 +32,7 @@ return {
 					"black", -- formatter (python)
 					-- "debugpy", -- An implementation of the Debug Adapter Protocol for Python. from Microsoft
 
-					-- "rust-analyzer", -- it will be installed via mason-lspconfig (rust_analyzer)
+					"rust-analyzer", -- it will be installed via mason-lspconfig (rust_analyzer)
 					-- "rustfmt", -- formatter (rust), comes with rust
 					-- "codelldb", -- rust debugger
 
@@ -45,9 +45,9 @@ return {
 					"prettier", -- formatter (javascript, typescript, json, html, JSX, markdown, yaml)
 
 					-- "clangd", -- lsp (C and C++)
-					"cpplint", -- linter (C and C++)
 					"clang-format", -- formatter (c, c++)
 
+					"cmake-language-server", -- lsp (cmake), mason-lspconfig (cmake)
 					"cmakelint", -- linter (cmake)
 					"gersemi", -- formatter (cmake)
 
@@ -58,11 +58,15 @@ return {
 					-- "docker-compose-language-service", -- lsp (docker compose), mason-lspconfig (docker_compose_language_service)
 
 					-- "json-lsp", -- lsp (json), mason-slpconfig (jsonls)
+
+					-- "html-lsp", -- lsp (html)
+					-- "templ", -- lsp (html)
 					"markuplint", -- linter (html)
+
 					"taplo", -- lsp (toml)
 
 					"marksman", -- lsp (markdown)
-					"markdownlint", -- linter, formatter (markdown)
+					-- "markdownlint", -- linter, formatter (markdown)
 				},
 			})
 		end,
@@ -87,7 +91,10 @@ return {
 					"dockerls",
 					"docker_compose_language_service",
 					"jsonls",
+					"html",
+					"templ",
 					"taplo",
+					"marksman",
 				},
 			})
 		end,
@@ -106,14 +113,18 @@ return {
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
-			-- lspconfig.pyright.setup({
-			--   capabilities = capabilities,
-			-- })
 			lspconfig.ruff.setup({
 				capabilities = capabilities,
 			})
 			-- lspconfig.rust_analyzer.setup({
-			--   capabilities = capabilities,
+			-- 	settings = {
+			-- 		["rust-analyzer"] = {
+			-- 			diagnostics = {
+			-- 				enable = false,
+			-- 			},
+			-- 		},
+			-- 	},
+			-- 	capabilities = capabilities,
 			-- })
 			lspconfig.gopls.setup({
 				capabilities = capabilities,
