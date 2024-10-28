@@ -8,21 +8,22 @@ return {
     conform.setup({
       formatters_by_ft = {
         lua = { "stylua" },
-        python = { "black" },
-        rust = { "rustfmt", lsp_format = "fallback" },
-        go = { "gofmt", lsp_format = "fallback" }, -- gofmt, gofumpt, goimports
+        python = { "isort", "black", lsp_format = "fallback" }, -- Conform will run multiple formatters sequentially
+        rust = { "rustfmt", lsp_format = "fallback", stop_after_first = true },
+        go = { "gofmt", "gofumpt", "goimports", stop_after_first = true, lsp_format = "fallback" }, -- gofmt, gofumpt, goimports
+        c = { "clangformat" },
         cpp = { "clangformat" },
         cmake = { "gersemi" },
-        javascript = { "prettier" },
-        typescript = { "prettier" },
-        javascriptreact = { "prettier" },
-        typescriptreact = { "prettier" },
-        yaml = { "prettier" },
-        json = { "prettier" },
-        html = { "prettier" },
-        css = { "prettier" },
-        markdown = { "prettier" },
-        graphql = { "prettier" },
+        javascript = { "prettier", "prettierd", stop_after_first = true }, -- Conform will run the first available formatter
+        typescript = { "prettier", "prettierd", stop_after_first = true },
+        javascriptreact = { "prettier", "prettierd", stop_after_first = true },
+        typescriptreact = { "prettier", "prettierd", stop_after_first = true },
+        yaml = { "prettier", "prettierd", stop_after_first = true },
+        json = { "prettier", "prettierd", stop_after_first = true },
+        html = { "prettier", "prettierd", stop_after_first = true },
+        css = { "prettier", "prettierd", stop_after_first = true },
+        markdown = { "prettier", "prettierd", stop_after_first = true },
+        graphql = { "prettier", "prettierd", stop_after_first = true },
       },
 
       -- Conform will notify you when a formatter errors
@@ -42,7 +43,7 @@ return {
       conform.format({
         lsp_fallback = true,
         async = false,
-        timeout_ms = 500,
+        timeout_ms = 1000,
       })
     end
 

@@ -1,6 +1,7 @@
 import datetime
-
-import sd
+import os
+import re
+import sys
 
 
 class Person:
@@ -10,10 +11,19 @@ class Person:
         self.age: int = age
 
 
+def adder(x: int, y: int) -> int:
+    return x + y
+
+
 men = Person("Kamronbek", 21)
+
+result: str = adder(3, 7)
 
 
 print(f"date now: {datetime.datetime.now()}")
 
+
 print(f"my name: {men.name}")
+
+
 print(f"my name: {men.age}")
