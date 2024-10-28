@@ -1,4 +1,11 @@
-# NEOVIM SHORTCUTS
+# 🚀 MY ULTIMATE NEOVIM SETUP 🚀
+
+> [!WARNING]
+> My config is so easy to configure and it has almost all languages!
+> Almost all languages has linter and formatter...
+
+> [!NOTE]
+> I have commented some options to choice!
 
 
 ## NAVIGATION
