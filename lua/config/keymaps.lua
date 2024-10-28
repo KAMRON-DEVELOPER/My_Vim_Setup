@@ -1,8 +1,7 @@
 local keymap = vim.keymap
 
--- set leader key and exit insert/visual mode
+-- set leader key
 vim.g.mapleader = " "
-keymap.set("i", "C-Space", "<Esc>", { desc = "Esc" })
 
 -- save and quite
 keymap.set("n", "<leader>w", "<CMD>write<CR>", { desc = "save buffer" })
