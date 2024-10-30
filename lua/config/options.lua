@@ -17,15 +17,15 @@ opt.smarttab = true
 opt.smartindent = true
 
 -- show search highlight only search mode and  live search
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+-- vim.opt.hlsearch = false
+-- vim.opt.incsearch = true
 
 -- always split to bottom or right
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 -- auto scroll
--- vim.opt.scrolloff = 5
+vim.opt.scrolloff = 5
 
 -- line wrapping
 opt.wrap = false
