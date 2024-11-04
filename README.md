@@ -1,20 +1,7 @@
 # 🚀 MY ULTIMATE NEOVIM SETUP 🚀
 
-
-> [!WARNING]
-> 😎 My config is so easy to configure and it has almost all languages!
-
-> 😱 Almost all languages has linter and formatter...
-
-> [!NOTE]
-> 💪 I have commented some options to choice!
-
-
----
----
-
-
 ### ⭐ NAVIGATION ⭐
+
 | Mode | Key        | Action                          |
 | ---- | ---------- | ------------------------------- |
 | (n)  | `h`        | Move cursor left                |
@@ -36,6 +23,7 @@
 | (n)  | `Ctrl + f` | Move one page down              |
 
 ## ⭐ EDITING ⭐
+
 | Mode | Key        | Action                            |
 | ---- | ---------- | --------------------------------- |
 | (n)  | `x`        | Delete character after cursor     |
@@ -55,6 +43,7 @@
 | (n)  | `caw`      | Change entire word                |
 
 ## ⭐ VISUAL MODE ⭐
+
 | Mode | Key | Action              |
 | ---- | --- | ------------------- |
 | (v)  | `v` | Start visual mode   |
@@ -63,25 +52,27 @@
 | (v)  | `p` | Paste               |
 | (v)  | `P` | Paste before cursor |
 
-
----
 ---
 
+---
 
 ## 📦 PLUGINS CONFIGURATION 📦
 
 ### ⚙️ nvim-treesitter
-| Mode | Key                    | Action                |
-| ---- | ---------------------- | --------------------- |
+
+| Mode | Key            | Action                |
+| ---- | -------------- | --------------------- |
 | (v)  | `Ctrl + Space` | Incremental selection |
-| (v)  | `Backspace`            | Decremental selection |
+| (v)  | `Backspace`    | Decremental selection |
 
 ### ⚙️ vim-maximizer
+
 | Mode | Key        | Action                         |
 | ---- | ---------- | ------------------------------ |
 | (n)  | `Ctrl + M` | Maximize/minimize split window |
 
 ### ⚙️ mason, mason-lspconfig, nvim-lspconfig
+
 | Mode | Key           | Action                      |
 | ---- | ------------- | --------------------------- |
 | (n)  | `Leader + ch` | Show code hover information |
@@ -90,6 +81,7 @@
 | (n)  | `Leader + ca` | Show code actions           |
 
 ### ⚙️ substitute.nvim
+
 | Mode | Key     | Action                           |
 | ---- | ------- | -------------------------------- |
 | (n)  | `s + e` | Change word until end            |
@@ -103,6 +95,7 @@
 | (n)  | `s + %` | Change inside brackets/braces    |
 
 ### ⚙️ nvim-surround
+
 | Mode | Key                     | Action                           |
 | ---- | ----------------------- | -------------------------------- |
 | (n)  | `ysiw + character`      | Surround word with a character   |
@@ -112,6 +105,7 @@
 | (n)  | `cs + character + text` | Change surrounding with new text |
 
 ### ⚙️ vim-fugitive
+
 | Mode | Key            | Action                      |
 | ---- | -------------- | --------------------------- |
 | (n)  | `Leader + gs`  | Open Git status window      |
