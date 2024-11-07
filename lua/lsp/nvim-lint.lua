@@ -9,7 +9,7 @@ return {
 		local lint = require("lint")
 
 		lint.linters_by_ft = {
-			python = { "mypy" }, -- ruff, flake8, mypy, pylint
+      -- python = { "mypy" }, -- ruff, flake8, mypy, pylint
 			html = { "markuplint" },
 			-- cmake = { "cmakelint" },
 			-- javascript = { "eslint_d" },

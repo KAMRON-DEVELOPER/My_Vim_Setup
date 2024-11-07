@@ -25,7 +25,7 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 -- auto scroll
-vim.opt.scrolloff = 5
+-- vim.opt.scrolloff = 5
 
 -- line wrapping
 opt.wrap = false

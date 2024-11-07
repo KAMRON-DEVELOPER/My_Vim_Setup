@@ -32,6 +32,7 @@ return {
 			})
 
 			require("telescope").load_extension("ui-select")
+      require("telescope").load_extension("flutter")
 
 			-- set keymaps
 			local keymap = vim.keymap
