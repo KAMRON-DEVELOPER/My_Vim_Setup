@@ -115,12 +115,6 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.pyright.setup({
-				settings = {
-					python = {
-						venvPath = "./",
-						venv = ".venv",
-					},
-				},
 				capabilities = capabilities,
 			})
 			lspconfig.rust_analyzer.setup({
