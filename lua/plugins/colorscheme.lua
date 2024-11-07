@@ -5,6 +5,7 @@ return {
 
 	config = function()
 		require("onedark").setup({
+      transparent = true,
 			style = "cool", -- "dark", "darker", "cool", "deep", "warm", "warmer"
 		})
 		vim.cmd("colorscheme onedark")
