@@ -27,7 +27,7 @@ return {
 
 					"pyright", -- lsp (python)
 					"mypy", -- linter (python)
-					-- "ruff", -- lsp, linter, formatter (python)
+				  -- "ruff", -- lsp, linter, formatter (python)
 					"isort", -- formatter (python)
 					"black", -- formatter (python)
 					-- "debugpy", -- An implementation of the Debug Adapter Protocol for Python. from Microsoft
@@ -82,6 +82,7 @@ return {
 				ensure_installed = {
 					"lua_ls",
 					"pyright", -- "ruff",
+          "ruff",
 					"rust_analyzer",
 					"gopls",
 					"ts_ls", -- "quick_lint_js",
